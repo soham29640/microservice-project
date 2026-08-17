@@ -1,0 +1,25 @@
+package com.soham29640.api_gateway.config;
+
+import io.swagger.v3.oas.models.ExternalDocumentation;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class OpenAPIConfig {
+
+    @Bean
+    public OpenAPI apiGatewayAPI() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("Microservices API Gateway")
+                        .description("API Gateway for Product, Order and Inventory Services")
+                        .version("v0.0.1")
+                        .license(new License().name("Apache 2.0")))
+                .externalDocs(new ExternalDocumentation()
+                        .description("Microservices Project Documentation")
+                        .url("https://your-documentation-url.com/docs"));
+    }
+}
